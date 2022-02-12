@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fexle.upennys.ui.home.HomeViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorHalfWhite"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/frameContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"/>
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigation"
+                    android:layout_width="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="@dimen/_50sdp"
+                    app:labelVisibilityMode="labeled"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorPrimary"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:elevation="5dp"
+                    app:itemIconSize="18dp"
+                    app:itemTextAppearanceInactive="@style/TextAppearance"
+                    app:itemTextAppearanceActive="@style/SelectedTextAppearance"
+                    app:itemBackground="@color/colorPrimary"
+                    app:itemIconTint="@drawable/color_bottom_navigation"
+                    app:itemTextColor="@drawable/color_bottom_navigation"
+                    app:menu="@menu/bottom_navigation_action"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Navigation Drawer -->
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/sideNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="#00000000"
+                android:maxWidth="@dimen/_200sdp"
+                app:elevation="16dp"
+                android:layout_marginBottom="60dp"
+                android:fitsSystemWindows="true">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <include android:id="@+id/menuLayout" layout="@layout/layout_custom_drawer"></include>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </com.google.android.material.navigation.NavigationView>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

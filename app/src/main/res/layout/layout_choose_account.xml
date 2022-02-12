@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fexle.upennys.ui.add_money.AddMoneyViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        app:tint="@color/colorPrimaryVariant"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_arrow_back"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/imageIcon"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:scaleType="fitCenter"
+                            android:visibility="invisible"
+                            android:src="@drawable/ic_star"/>
+                        <TextView
+                            android:id="@+id/textTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorLightBlack"
+                            android:text="Choose account to pay with"/>
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/btnDropdown"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+                        android:padding="15dp"
+                        app:tint="@color/colorPrimaryVariant"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_drop_down"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/layoutAirpay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:contentPadding="7dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#E1E4F4">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"
+                            app:riv_corner_radius="5dp"
+                            android:src="@drawable/ic_airpay"/>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="3"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="3"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:text="Airpay \u2B24\u2B24\u2B24\u2B24\u2B24\u2B24 4566"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="user payment id"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="account type"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/layoutGooglePay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:contentPadding="7dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#E1E4F4">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:padding="5dp"
+                            app:riv_corner_radius="5dp"
+                            android:src="@drawable/ic_google_pay"/>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="3"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="3"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:text="GPay \u2B24\u2B24\u2B24\u2B24\u2B24\u2B24 4566"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="user payment id"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="account type"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/layoutApplePay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:contentPadding="7dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#E1E4F4">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"
+                            app:riv_corner_radius="5dp"
+                            android:src="@drawable/ic_apple"/>
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="3"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="3"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="1"
+                                        android:ellipsize="end"
+                                        android:text="ApplePay \u2B24\u2B24\u2B24\u2B24\u2B24\u2B24 4566"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="user payment id"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="left"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:maxLines="2"
+                                        android:ellipsize="end"
+                                        android:text="account type"/>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/btnAddCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_primary_stroke"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="fitCenter"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_card_smartphone"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="Add credits card"/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:gravity="center"
+                    android:paddingLeft="35dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="35dp"
+                    android:paddingBottom="15dp"
+                    android:text="Done"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

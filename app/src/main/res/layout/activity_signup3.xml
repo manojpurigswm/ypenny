@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fexle.upennys.ui.signup.Signup3ViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="70dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Create\nAccount"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorHalfBlack"
+                    android:text="Your contact details"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorHalfBlack"
+                    android:text="Address"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHouseNo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:boxStrokeWidth="0dp"
+                    app:boxBackgroundColor="@color/colorHalfWhite">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edHouseNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="House no."
+                        android:inputType="textPostalAddress"
+                        android:maxLength="30"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilStreet"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:boxStrokeWidth="0dp"
+                    app:boxBackgroundColor="@color/colorHalfWhite">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edStreet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="Street name"
+                        android:inputType="textPostalAddress"
+                        android:maxLength="30"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:boxStrokeWidth="0dp"
+                    app:boxBackgroundColor="@color/colorHalfWhite">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="City"
+                        android:inputType="textPostalAddress"
+                        android:maxLength="30"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCountry"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:boxStrokeWidth="0dp"
+                    app:boxBackgroundColor="@color/colorHalfWhite">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="Country"
+                        android:inputType="textPostalAddress"
+                        android:maxLength="30"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorHalfBlack"
+                    android:text="Contact Number"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilContactNumber"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleTint="@color/colorPrimary"
+                    app:boxStrokeWidth="0dp"
+                    app:boxBackgroundColor="@color/colorHalfWhite">
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edContactNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:hint="Contact Number"
+                        android:inputType="textPassword"
+                        android:maxLength="30"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:text="Next"/>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            app:tint="@color/colorPrimaryVariant"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="?attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow_back"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
